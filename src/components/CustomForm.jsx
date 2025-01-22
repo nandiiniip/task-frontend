@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
 
-const CustomForm = ({ children, onSubmit, ...props }) => {
+const CustomForm = ({ children, onSubmit, maxWidth = "400px", ...props }) => {
   return (
     <Box
       component="form"
@@ -11,7 +11,8 @@ const CustomForm = ({ children, onSubmit, ...props }) => {
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        maxWidth: "400px",
+        maxWidth: maxWidth, // Dynamically adjust maxWidth
+        width: "100%", // Ensure it adapts to smaller screens
         margin: "auto",
         padding: 2,
         border: "1px solid #ccc",
@@ -28,6 +29,7 @@ const CustomForm = ({ children, onSubmit, ...props }) => {
 CustomForm.propTypes = {
   children: PropTypes.node.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  maxWidth: PropTypes.string,
 };
 
 export default CustomForm;
