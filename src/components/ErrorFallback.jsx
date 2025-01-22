@@ -12,7 +12,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
         color: "#b91c1c",
         border: "1px solid #fca5a5",
         borderRadius: "8px",
-        minHeight: "100vh"
+        minHeight: "100vh",
       }}
     >
       <h2>Something went wrong.</h2>
