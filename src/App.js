@@ -1,17 +1,21 @@
 import React from "react";
-import "./App.css";
-import { HomePage, RegisterPage } from "./pages";
-import { Route, Routes } from "react-router-dom";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HomePage, LoginPage } from "./pages";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<RegisterPage />} />
-      </Routes>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
