@@ -95,8 +95,7 @@ const RegisterPage = () => {
           fullWidth
           {...register("confirmPassword", {
             required: "Confirm Password is required",
-            validate: (value) =>
-              value === password || "Passwords do not match",
+            validate: (value) => value === password || "Passwords do not match",
           })}
           error={!!errors.confirmPassword}
           helperText={
