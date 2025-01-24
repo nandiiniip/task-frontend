@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Button } from "@mui/material";
+import { Typography, Button } from "@mui/material";
+import { NotFoundPageContent } from "../Content/NotFoundPage";
+import StyledBox from "../components/BoxContainer";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -10,32 +12,17 @@ const NotFoundPage = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        textAlign: "center",
-        padding: 3,
-      }}
-    >
+    <StyledBox>
       <Typography variant="h1" color="primary" gutterBottom>
-        404
+        {NotFoundPageContent.numberTitle}
       </Typography>
       <Typography variant="h5" gutterBottom>
-        Oops! The page you are looking for does not exist.
+        {NotFoundPageContent.pageContent}
       </Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={goToHome}
-        sx={{ marginTop: 2 }}
-      >
-        Go to Home
+      <Button variant="contained" color="primary" onClick={goToHome}>
+        {NotFoundPageContent.buttonName}
       </Button>
-    </Box>
+    </StyledBox>
   );
 };
 

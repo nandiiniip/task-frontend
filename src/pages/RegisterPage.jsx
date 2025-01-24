@@ -1,8 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { TextField, Typography, Box } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import CustomForm from "../components/CustomForm";
 import CustomButton from "../components/CustomButton";
+import { SignupContent } from "../Content/Signup";
+import StyledBox from "../components/BoxContainer";
 
 const RegisterPage = () => {
   const {
@@ -22,18 +24,9 @@ const RegisterPage = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: 3,
-        backgroundColor: "#f5f5f5",
-        minHeight: "100vh",
-      }}
-    >
+    <StyledBox>
       <Typography variant="h4" gutterBottom>
-        Register
+        {SignupContent.Title}
       </Typography>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
         {/* Email Field */}
@@ -104,9 +97,9 @@ const RegisterPage = () => {
         />
 
         {/* Submit Button */}
-        <CustomButton type="submit">Register</CustomButton>
+        <CustomButton type="submit">{SignupContent.ButtonName}</CustomButton>
       </CustomForm>
-    </Box>
+    </StyledBox>
   );
 };
 

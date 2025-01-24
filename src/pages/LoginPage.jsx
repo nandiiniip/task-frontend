@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import CustomForm from "../components/CustomForm";
 import CustomButton from "../components/CustomButton";
 import { TextField, Typography } from "@mui/material";
+import { LoginContent } from "../Content/Login";
+import MainContainer from "../components/MainContainer";
 
 const LoginPage = () => {
   const {
@@ -19,9 +21,9 @@ const LoginPage = () => {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <MainContainer>
       <Typography variant="h4" textAlign="center" gutterBottom>
-        Login
+        {LoginContent.Title}
       </Typography>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
         <TextField
@@ -50,9 +52,9 @@ const LoginPage = () => {
           error={!!errors.password}
           helperText={errors.password ? errors.password.message : ""}
         />
-        <CustomButton type="submit">Login</CustomButton>
+        <CustomButton type="submit">{LoginContent.ButtonName}</CustomButton>
       </CustomForm>
-    </div>
+    </MainContainer>
   );
 };
 

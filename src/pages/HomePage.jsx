@@ -2,31 +2,26 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import { Box, Typography } from "@mui/material";
+import { HomePageContent } from "../Content/HomePage";
+import MainContainer from "../components/MainContainer";
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        textAlign: "center",
-        backgroundColor: "#f5f5f5",
-        padding: 3,
-      }}
-    >
+    <MainContainer>
       <Typography variant="h2" gutterBottom>
-        Welcome!!
+        {HomePageContent.title}
       </Typography>
-      <Box sx={{ display: "flex", gap: 2 }}>
-        <CustomButton onClick={() => navigate("/signup")}>Sign Up</CustomButton>
-        <CustomButton onClick={() => navigate("/login")}>Login</CustomButton>
+      <Box display="flex" justifyContent="center" gap={3}>
+        <CustomButton onClick={() => navigate("/sign-up")}>
+          {HomePageContent.signupButton}
+        </CustomButton>
+        <CustomButton onClick={() => navigate("/login")}>
+          {HomePageContent.loginButton}
+        </CustomButton>
       </Box>
-    </Box>
+    </MainContainer>
   );
 };
 
