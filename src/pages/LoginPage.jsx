@@ -1,23 +1,38 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import CustomForm from "../components/CustomForm";
 import CustomButton from "../components/CustomButton";
 import { TextField, Typography } from "@mui/material";
 import { LoginContent } from "../Content/Login";
 import MainContainer from "../components/MainContainer";
+import api from "../utils/api";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    alert("Login Successful!");
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const response = await api.post("/login", {
+        email: data.email,
+        password: data.password,
+      });
+      console.log("Response Data: ", response.data);
+
+      localStorage.setItem("access_token", response.data.access_token);
+      localStorage.setItem("refresh_token", response.data.refresh_token);
+
+      alert("Login Successful!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error: ", error);
+      alert(error?.response?.data?.detail || "Login Failed!");
+    }
   };
 
   return (
