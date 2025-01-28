@@ -5,6 +5,7 @@ import CustomForm from "../components/CustomForm";
 import CustomButton from "../components/CustomButton";
 import { SignupContent } from "../Content/Signup";
 import StyledBox from "../components/BoxContainer";
+import api from "../utils/api";
 
 const RegisterPage = () => {
   const {
@@ -17,10 +18,21 @@ const RegisterPage = () => {
 
   const password = watch("password", "");
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    alert("Registration Successful!");
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const response = await api.post("/register", {
+        email: data.email,
+        full_name: data.fullName,
+        title: data.title,
+        password: data.password,
+      });
+      console.log("Response Data: ", response.data);
+      alert("Registration Successful!");
+      reset();
+    } catch (error) {
+      console.error("Error: ", error);
+      alert(error?.detail || "Registration Failed!");
+    }
   };
 
   return (
