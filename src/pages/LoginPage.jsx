@@ -22,16 +22,16 @@ const LoginPage = () => {
         email: data.email,
         password: data.password,
       });
-      console.log('Response Data: ', response.data);
+      console.log("Response Data: ", response.data);
 
-      localStorage.setItem('access_token', response.data.access_token);
-      localStorage.setItem('refresh_token', response.data.refresh_token);
+      localStorage.setItem("access_token", response.data.access_token);
+      localStorage.setItem("refresh_token", response.data.refresh_token);
 
-      alert('Login Successful!');
-      navigate('/'); 
+      alert("Login Successful!");
+      navigate("/");
     } catch (error) {
-      console.error('Error: ', error);
-      alert(error?.response?.data?.detail || 'Login Failed!');
+      console.error("Error: ", error);
+      alert(error?.response?.data?.detail || "Login Failed!");
     }
   };
 
