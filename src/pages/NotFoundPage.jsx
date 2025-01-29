@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography, Button } from "@mui/material";
 import { NotFoundPageContent } from "../Content/NotFoundPage";
-import StyledBox from "../components/BoxContainer";
+import { StyledBox } from "../components";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
