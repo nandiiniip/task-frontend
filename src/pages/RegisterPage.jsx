@@ -1,10 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Typography } from "@mui/material";
-import CustomForm from "../components/CustomForm";
-import CustomButton from "../components/CustomButton";
 import { SignupContent } from "../Content/Signup";
-import StyledBox from "../components/BoxContainer";
+import { CustomForm, CustomButton, StyledBox } from "../components";
 import api from "../utils/api";
 
 const RegisterPage = () => {

@@ -1,4 +1,6 @@
 import axios from "axios";
+import store from "../store/store";
+import { logout, setTokens } from "../store/authSlice";
 
 // Create an Axios instance
 const api = axios.create({
@@ -11,8 +13,9 @@ const api = axios.create({
 // Request interceptor: Add Authorization Token
 api.interceptors.request.use(
   async (config) => {
-    let accessToken = localStorage.getItem("access_token");
-    let refreshToken = localStorage.getItem("refresh_token");
+    const state = store.getState().auth;
+    let accessToken = state.accessToken;
+    let refreshToken = state.refreshToken;
 
     // Ensure token exists before decoding
     if (accessToken) {
@@ -35,11 +38,12 @@ api.interceptors.request.use(
             accessToken = refreshResponse.data.access_token;
             refreshToken = refreshResponse.data.refresh_token;
 
-            localStorage.setItem("access_token", accessToken);
-            localStorage.setItem("refresh_token", refreshToken);
+            store.dispatch(
+              setTokens({ access: accessToken, refresh: refreshToken }),
+            );
           } catch (err) {
             console.error("Token refresh failed, logging out...", err);
-            localStorage.clear();
+            store.dispatch(logout());
             window.location.href = "/login";
             return Promise.reject(err);
           }
@@ -48,7 +52,7 @@ api.interceptors.request.use(
         config.headers.Authorization = `Bearer ${accessToken}`;
       } catch (error) {
         console.error("Error processing token:", error);
-        localStorage.clear();
+        store.dispatch(logout());
         window.location.href = "/login";
         return Promise.reject(error);
       }

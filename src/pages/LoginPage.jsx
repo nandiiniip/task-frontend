@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import CustomForm from "../components/CustomForm";
-import CustomButton from "../components/CustomButton";
 import { TextField, Typography } from "@mui/material";
 import { LoginContent } from "../Content/Login";
-import MainContainer from "../components/MainContainer";
+import { CustomForm, CustomButton, MainContainer } from "../components";
 import api from "../utils/api";
+import { useDispatch } from "react-redux";
+import { setTokens } from "../store/authSlice";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -24,8 +25,16 @@ const LoginPage = () => {
       });
       console.log("Response Data: ", response.data);
 
-      localStorage.setItem("access_token", response.data.access_token);
-      localStorage.setItem("refresh_token", response.data.refresh_token);
+      // localStorage.setItem("access_token", response.data.access_token);
+      // localStorage.setItem("refresh_token", response.data.refresh_token);
+
+      dispatch(
+        setTokens({
+          user: { email: data.email},
+          access: response.data.access_token,
+          refresh: response.data.refresh_token,
+        })
+      );
 
       alert("Login Successful!");
       navigate("/");

@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CustomButton from "../components/CustomButton";
 import { Box, Typography } from "@mui/material";
 import { HomePageContent } from "../Content/HomePage";
-import MainContainer from "../components/MainContainer";
+import { CustomButton, MainContainer } from "../components";
 
 const HomePage = () => {
   const navigate = useNavigate();
