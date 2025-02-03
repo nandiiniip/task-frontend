@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { TextField, Typography } from "@mui/material";
 import { LoginContent } from "../Content/Login";
 import { CustomForm, CustomButton, MainContainer } from "../components";
-import api from "../utils/api";
+import axiosCustom from "../utils/api";
 import { useDispatch } from "react-redux";
 import { setTokens } from "../store/authSlice";
 
@@ -19,7 +19,7 @@ const LoginPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await api.post("/login", {
+      const response = await axiosCustom.post("/login", {
         email: data.email,
         password: data.password,
       });

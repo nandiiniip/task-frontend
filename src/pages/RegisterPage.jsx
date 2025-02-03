@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { TextField, Typography } from "@mui/material";
 import { SignupContent } from "../Content/Signup";
 import { CustomForm, CustomButton, StyledBox } from "../components";
-import api from "../utils/api";
+import axiosCustom from "../utils/api";
 
 const RegisterPage = () => {
   const {
@@ -18,7 +18,7 @@ const RegisterPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await api.post("/register", {
+      const response = await axiosCustom.post("/register", {
         email: data.email,
         full_name: data.fullName,
         title: data.title,

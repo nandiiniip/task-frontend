@@ -3,7 +3,7 @@ import store from "../store/store";
 import { logout, setTokens } from "../store/authSlice";
 
 // Create an Axios instance
-const api = axios.create({
+const axiosCustom = axios.create({
   baseURL: "http://127.0.0.1:8000",
   headers: {
     "Content-Type": "application/json",
@@ -11,7 +11,7 @@ const api = axios.create({
 });
 
 // Request interceptor: Add Authorization Token
-api.interceptors.request.use(
+axiosCustom.interceptors.request.use(
   async (config) => {
     const state = store.getState().auth;
     let accessToken = state.accessToken;
@@ -64,7 +64,7 @@ api.interceptors.request.use(
 );
 
 // Response interceptor: Handle 401 Unauthorized errors
-api.interceptors.response.use(
+axiosCustom.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response) {
@@ -79,4 +79,4 @@ api.interceptors.response.use(
   },
 );
 
-export default api;
+export default axiosCustom;
