@@ -7,6 +7,7 @@ const theme = createTheme({
       main: "#1976d2",
       bgcolor: "#f5f5f5",
       redcolor: "#ef4444",
+      navcolor: "#1976D2",
     },
     secondary: {
       main: "#ff4081",
