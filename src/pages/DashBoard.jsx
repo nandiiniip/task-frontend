@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import { NavBar, SideMenu } from "../components";
 
 const DashBoard = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <NavBar />
+      <SideMenu />
+    </>
+  );
+};
 
-export default DashBoard
+export default DashBoard;
