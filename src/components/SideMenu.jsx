@@ -3,7 +3,6 @@ import {
   Box,
   List,
   CssBaseline,
-  Typography,
   Divider,
   IconButton,
   ListItem,
@@ -12,8 +11,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import SettingsIcon from "@mui/icons-material/Settings";
+import GroupIcon from '@mui/icons-material/Group';
 import {
   Drawer,
   DrawerHeader,
@@ -21,9 +19,10 @@ import {
   StyledListItemButton,
     StyledListItemIcon,
 } from "../components/DrawerStyles";
-import { SideMenuContent } from "../Content/SideMenuContent";
+import { useNavigate } from "react-router-dom";
 
 const SideMenu = () => {
+    const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -39,11 +38,10 @@ const SideMenu = () => {
         <Divider />
         <List>
           {[
-            { text: "Home", icon: <HomeIcon /> },
-            { text: "Dashboard", icon: <DashboardIcon /> },
-            { text: "Settings", icon: <SettingsIcon /> },
-          ].map(({ text, icon }) => (
-            <ListItem key={text} disablePadding>
+            { text: "Home", icon: <HomeIcon />, path: "/dashboard" },
+            { text: "Users", icon: <GroupIcon /> },
+          ].map(({ text, icon, path }) => (
+            <ListItem key={text} disablePadding onClick={() => navigate(path)}>
               <StyledListItemButton open={open}>
                 <StyledListItemIcon
                   open={open}
@@ -58,7 +56,6 @@ const SideMenu = () => {
       </Drawer>
       <Box>
         <DrawerHeader />
-        <Typography variant="h4">{SideMenuContent.heading}</Typography>
       </Box>
     </DashBoardContent>
   );

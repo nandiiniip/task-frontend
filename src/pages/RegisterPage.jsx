@@ -1,9 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
 import { SignupContent } from "../Content/Signup";
 import { CustomForm, CustomButton, StyledBox } from "../components";
 import axiosCustom from "../utils/api";
+import { TitleTypography } from "../components/TypographyStyles";
 
 const RegisterPage = () => {
   const {
@@ -35,9 +36,9 @@ const RegisterPage = () => {
 
   return (
     <StyledBox>
-      <Typography variant="h4" gutterBottom>
+      <TitleTypography variant="h4" gutterBottom>
         {SignupContent.Title}
-      </Typography>
+      </TitleTypography>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
         {/* Email Field */}
         <TextField

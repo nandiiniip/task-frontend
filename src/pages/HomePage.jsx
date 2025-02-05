@@ -1,17 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { HomePageContent } from "../Content/HomePage";
 import { CustomButton, MainContainer } from "../components";
+import { TitleTypography } from "../components/TypographyStyles";
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
     <MainContainer>
-      <Typography variant="h2" gutterBottom>
+      <TitleTypography variant="h2" gutterBottom>
         {HomePageContent.title}
-      </Typography>
+      </TitleTypography>
       <Box display="flex" justifyContent="center" gap={3}>
         <CustomButton onClick={() => navigate("/sign-up")}>
           {HomePageContent.signupButton}
