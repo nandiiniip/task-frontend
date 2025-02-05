@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
 import { LoginContent } from "../Content/Login";
 import { CustomForm, CustomButton, MainContainer } from "../components";
 import axiosCustom from "../utils/api";
 import { useDispatch } from "react-redux";
 import { setTokens } from "../store/authSlice";
+import { TitleTypography } from "../components/TypographyStyles";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -46,9 +47,9 @@ const LoginPage = () => {
 
   return (
     <MainContainer>
-      <Typography variant="h4" textAlign="center" gutterBottom>
+      <TitleTypography variant="h4" textAlign="center" gutterBottom>
         {LoginContent.Title}
-      </Typography>
+      </TitleTypography>
       <CustomForm onSubmit={handleSubmit(onSubmit)}>
         <TextField
           label="Email"
