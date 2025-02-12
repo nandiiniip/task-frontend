@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StyledForm from "./FormContainer";
+import StyledForm from "../styled-components/FormContainer";
 
 const CustomForm = ({ children, onSubmit, ...props }) => {
   return (

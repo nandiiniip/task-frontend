@@ -1,6 +1,6 @@
 import React from 'react'
-import { DashBoardContent } from '../components/DrawerStyles';
-import { TitleTypography,BodyTypography } from "../components/TypographyStyles";
+import { DashBoardContent } from '../styled-components/DrawerStyles';
+import { TitleTypography,BodyTypography } from "../styled-components/TypographyStyles";
 import { HomeContent } from '../Content/DashBoardHome';
 
 const DashBoardHome = () => {

@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { LoginContent } from "../Content/Login";
-import { CustomForm, CustomButton, MainContainer } from "../components";
+import { CustomForm, CustomButton } from "../components";
 import axiosCustom from "../utils/api";
 import { useDispatch } from "react-redux";
 import { setTokens } from "../store/authSlice";
-import { TitleTypography } from "../components/TypographyStyles";
+import { TitleTypography } from "../styled-components/TypographyStyles";
+import MainContainer from "../styled-components/MainContainer";
 
 const LoginPage = () => {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Typography } from "@mui/material";
+import { TableCell, Typography } from "@mui/material";
 
 export const TitleTypography = styled(Typography)(({ theme }) => ({
   fontSize: "2.5rem",
@@ -12,6 +12,7 @@ export const BodyTypography = styled(Typography)(({ theme }) => ({
   fontSize: "1rem",
   color: theme.palette.text.primary,
   lineHeight: 1.5,
+  textAlign: "center",
 }));
 
 export const StyledList = styled("ul")(({ theme }) => ({
@@ -24,3 +25,14 @@ export const StyledListItem = styled("li")(({ theme }) => ({
   fontSize: "1rem",
   color: theme.palette.text.secondary,
 }));
+
+export const TableHeading = styled(TableCell)(({ theme }) => ({
+  fontSize: "1.5rem",
+  fontWeight: "500",
+  color: theme.palette.secondary.black,
+  // textAlign: "center"
+}));
+
+// export const TableContent = styled(TableCell)(() => ({
+//   textAlign: "center",
+// }));

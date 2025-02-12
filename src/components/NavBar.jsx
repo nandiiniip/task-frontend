@@ -2,8 +2,8 @@ import React from "react";
 import { AppBar, Typography, IconButton, Box } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import NavbarContainer from "./NavbarContainer";
-import CustomToolbar from "./CustomToolbar";
+import NavbarContainer from "../styled-components/NavbarContainer";
+import CustomToolbar from "../styled-components/CustomToolbar";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {

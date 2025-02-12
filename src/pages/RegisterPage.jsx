@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { SignupContent } from "../Content/Signup";
-import { CustomForm, CustomButton, StyledBox } from "../components";
+import { CustomForm, CustomButton } from "../components";
 import axiosCustom from "../utils/api";
-import { TitleTypography } from "../components/TypographyStyles";
+import { TitleTypography } from "../styled-components/TypographyStyles";
+import StyledBox from "../styled-components/BoxContainer";
 
 const RegisterPage = () => {
   const {

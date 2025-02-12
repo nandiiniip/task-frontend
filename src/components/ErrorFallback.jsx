@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MainContainer from "./MainContainer";
+import MainContainer from "../styled-components/MainContainer";
 import CustomButton from "./CustomButton";
 import { ErrorFallbackContent } from "../Content/ErrorFallback";
 
