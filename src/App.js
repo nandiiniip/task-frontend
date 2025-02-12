@@ -10,6 +10,7 @@ import {
   DashBoard,
   About,
   Home,
+  UserList,
 } from "./pages";
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -29,6 +30,7 @@ const App = () => {
               <Route path="/dashboard" element={<DashBoard />}>
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
+                <Route path="users" element={<UserList />} />
               </Route>
             </Route>
             <Route path="*" element={<NotFoundPage />} />

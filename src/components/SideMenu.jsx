@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import GroupIcon from '@mui/icons-material/Group';
 import {
   Drawer,
@@ -18,7 +18,7 @@ import {
   DashBoardContent,
   StyledListItemButton,
     StyledListItemIcon,
-} from "../components/DrawerStyles";
+} from "../styled-components/DrawerStyles";
 import { useNavigate } from "react-router-dom";
 
 const SideMenu = () => {
@@ -33,13 +33,13 @@ const SideMenu = () => {
       <CssBaseline />
       <Drawer variant="permanent" open={open}>
         <IconButton color="inherit" onClick={handleDrawerToggle}>
-          {open ? <ChevronLeftIcon /> : <MenuIcon />}
+          {open ? <ArrowBackIcon /> : <MenuIcon />}
         </IconButton>
         <Divider />
         <List>
           {[
             { text: "Home", icon: <HomeIcon />, path: "/dashboard" },
-            { text: "Users", icon: <GroupIcon /> },
+            { text: "Users", icon: <GroupIcon />, path: "/dashboard/users" },
           ].map(({ text, icon, path }) => (
             <ListItem key={text} disablePadding onClick={() => navigate(path)}>
               <StyledListItemButton open={open}>
