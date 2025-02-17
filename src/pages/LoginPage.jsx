@@ -6,7 +6,7 @@ import { LoginContent } from "../Content/Login";
 import { CustomForm, CustomButton } from "../components";
 import axiosCustom from "../utils/api";
 import { useDispatch } from "react-redux";
-import { setTokens } from "../store/authSlice";
+import { setTokens, setUser } from "../store/authSlice";
 import { TitleTypography } from "../styled-components/TypographyStyles";
 import MainContainer from "../styled-components/MainContainer";
 
@@ -38,8 +38,16 @@ const LoginPage = () => {
         })
       );
 
+      const userDetails = await axiosCustom.get("/user/me", {
+        headers: {
+          Authorization: `Bearer ${response.data.access_token}`
+        },
+      });
+
+      dispatch(setUser(userDetails.data));
+
       alert("Login Successful!");
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.error("Error: ", error);
       alert(error?.response?.data?.detail || "Login Failed!");

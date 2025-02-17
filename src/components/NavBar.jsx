@@ -1,10 +1,10 @@
 import React from "react";
 import { AppBar, Typography, IconButton, Box } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NavbarContainer from "../styled-components/NavbarContainer";
 import CustomToolbar from "../styled-components/CustomToolbar";
 import { useNavigate } from "react-router-dom";
+import UserMenu from "./UserMenu";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -19,9 +19,7 @@ const NavBar = () => {
             <IconButton color="inherit" onClick={() => navigate("about")}>
               <InfoIcon />
             </IconButton>
-            <IconButton color="inherit">
-              <AccountCircleIcon />
-            </IconButton>
+            <UserMenu />
           </Box>
         </CustomToolbar>
       </AppBar>

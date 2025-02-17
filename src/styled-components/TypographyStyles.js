@@ -13,6 +13,9 @@ export const BodyTypography = styled(Typography)(({ theme }) => ({
   color: theme.palette.text.primary,
   lineHeight: 1.5,
   textAlign: "center",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 }));
 
 export const StyledList = styled("ul")(({ theme }) => ({
@@ -31,6 +34,11 @@ export const TableHeading = styled(TableCell)(({ theme }) => ({
   fontWeight: "500",
   color: theme.palette.secondary.black,
   // textAlign: "center"
+}));
+
+export const LabelHeading = styled(BodyTypography)(() => ({
+  fontSize: "1rem",
+  fontWeight: "600",
 }));
 
 // export const TableContent = styled(TableCell)(() => ({

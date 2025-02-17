@@ -11,6 +11,7 @@ import {
   About,
   Home,
   UserList,
+  Profile,
 } from "./pages";
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -31,6 +32,7 @@ const App = () => {
                 <Route index element={<Home />} />
                 <Route path="about" element={<About />} />
                 <Route path="users" element={<UserList />} />
+                <Route path="profile" element={<Profile />} />
               </Route>
             </Route>
             <Route path="*" element={<NotFoundPage />} />

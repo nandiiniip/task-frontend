@@ -6,8 +6,10 @@ import { CustomForm, CustomButton } from "../components";
 import axiosCustom from "../utils/api";
 import { TitleTypography } from "../styled-components/TypographyStyles";
 import StyledBox from "../styled-components/BoxContainer";
+import { useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -28,6 +30,7 @@ const RegisterPage = () => {
       });
       console.log("Response Data: ", response.data);
       alert("Registration Successful!");
+      navigate("/login");
       reset();
     } catch (error) {
       console.error("Error: ", error);
