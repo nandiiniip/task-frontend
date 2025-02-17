@@ -16,7 +16,7 @@ const Profile = () => {
       <TitleTypography>{ProfileContent.title}</TitleTypography>
       <ContentBox>
         <BodyTypography>
-         <LabelHeading>{ProfileContent.email}</LabelHeading> 
+          <LabelHeading>{ProfileContent.email}</LabelHeading>
           {user?.email}
         </BodyTypography>
         <BodyTypography>
@@ -24,7 +24,7 @@ const Profile = () => {
           {user?.full_name}
         </BodyTypography>
         <BodyTypography>
-        <LabelHeading>{ProfileContent.position}</LabelHeading>
+          <LabelHeading>{ProfileContent.position}</LabelHeading>
           {user?.title}
         </BodyTypography>
       </ContentBox>
