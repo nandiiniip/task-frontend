@@ -6,3 +6,4 @@ export { default as DashBoard } from "./DashBoard.jsx";
 export { default as Home } from "./DashBoardHome.jsx";
 export { default as About } from "./About.jsx";
 export { default as UserList } from "./UserList.jsx";
+export { default as Profile } from "./Profile.jsx";
