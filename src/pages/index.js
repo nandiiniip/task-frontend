@@ -7,3 +7,5 @@ export { default as Home } from "./DashBoardHome.jsx";
 export { default as About } from "./About.jsx";
 export { default as UserList } from "./UserList.jsx";
 export { default as Profile } from "./Profile.jsx";
+export { default as PasswordReset } from "./PasswordReset.jsx";
+export { default as PasswordConfirmation } from "./PasswordConfirmation.jsx";

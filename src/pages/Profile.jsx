@@ -2,7 +2,6 @@ import React from "react";
 import { DashBoardContent } from "../styled-components/DrawerStyles";
 import {
   BodyTypography,
-  LabelHeading,
   TitleTypography,
 } from "../styled-components/TypographyStyles";
 import { ContentBox } from "../styled-components/ContentBox";
@@ -16,15 +15,15 @@ const Profile = () => {
       <TitleTypography>{ProfileContent.title}</TitleTypography>
       <ContentBox>
         <BodyTypography>
-          <LabelHeading>{ProfileContent.email}</LabelHeading>
+          {ProfileContent.email}
           {user?.email}
         </BodyTypography>
         <BodyTypography>
-          <LabelHeading>{ProfileContent.fullname}</LabelHeading>
+          {ProfileContent.fullname}
           {user?.full_name}
         </BodyTypography>
         <BodyTypography>
-          <LabelHeading>{ProfileContent.position}</LabelHeading>
+          {ProfileContent.position}
           {user?.title}
         </BodyTypography>
       </ContentBox>

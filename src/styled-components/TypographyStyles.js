@@ -8,14 +8,21 @@ export const TitleTypography = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-export const BodyTypography = styled(Typography)(({ theme }) => ({
+export const BodyTypography = styled(Typography)(({ theme, clickable }) => ({
   fontSize: "1rem",
-  color: theme.palette.text.primary,
+  color: theme.palette.primary.main,
   lineHeight: 1.5,
   textAlign: "center",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  cursor: clickable ? "pointer" : "default",
+  "&:hover": clickable
+    ? {
+        textDecoration: "underline",
+        color: theme.palette.secondary.main, // Change color on hover if clickable
+      }
+    : {},
 }));
 
 export const StyledList = styled("ul")(({ theme }) => ({
@@ -40,7 +47,3 @@ export const LabelHeading = styled(BodyTypography)(() => ({
   fontSize: "1rem",
   fontWeight: "600",
 }));
-
-// export const TableContent = styled(TableCell)(() => ({
-//   textAlign: "center",
-// }));
