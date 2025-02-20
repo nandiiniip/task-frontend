@@ -7,7 +7,7 @@ import { CustomForm, CustomButton } from "../components";
 import axiosCustom from "../utils/api";
 import { useDispatch } from "react-redux";
 import { setTokens, setUser } from "../store/authSlice";
-import { TitleTypography } from "../styled-components/TypographyStyles";
+import { BodyTypography, TitleTypography } from "../styled-components/TypographyStyles";
 import MainContainer from "../styled-components/MainContainer";
 
 const LoginPage = () => {
@@ -87,6 +87,7 @@ const LoginPage = () => {
           helperText={errors.password ? errors.password.message : ""}
         />
         <CustomButton type="submit">{LoginContent.ButtonName}</CustomButton>
+        <BodyTypography clickable="true" onClick={() => navigate("/password-reset-request")}>Forgot Password?</BodyTypography>
       </CustomForm>
     </MainContainer>
   );

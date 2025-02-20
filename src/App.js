@@ -12,6 +12,8 @@ import {
   Home,
   UserList,
   Profile,
+  PasswordReset,
+  PasswordConfirmation,
 } from "./pages";
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -27,6 +29,8 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/sign-up" element={<RegisterPage />} />
+            <Route path="/password-reset-request" element={<PasswordReset />} />
+            <Route path="/reset-password" element={<PasswordConfirmation />} />
             <Route element={<PrivateRoute />}>
               <Route path="/dashboard" element={<DashBoard />}>
                 <Route index element={<Home />} />
